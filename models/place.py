@@ -61,11 +61,11 @@ class Place(BaseModel, Base):
             var = models.storage.all()
             lista = []
             result = []
-            for key in var:
-                review = key.replace('.', ' ')
+            for key_11 in var:
+                review = key_11.replace('.', ' ')
                 review = shlex.split(review)
                 if (review[0] == 'Review'):
-                    lista.append(var[key])
+                    lista.append(var[key_11])
             for elem in lista:
                 if (elem.place_id == self.id):
                     result.append(elem)

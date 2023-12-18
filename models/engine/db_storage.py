@@ -43,15 +43,15 @@ class DBStorage:
                 cls = eval(cls)
             query = self.__session.query(cls)
             for elem in query:
-                key = "{}.{}".format(type(elem).__name__, elem.id)
-                dic[key] = elem
+                key_11 = "{}.{}".format(type(elem).__name__, elem.id)
+                dic[key_11] = elem
         else:
             lista = [State, City, User, Place, Review, Amenity]
             for clase in lista:
                 query = self.__session.query(clase)
                 for elem in query:
-                    key = "{}.{}".format(type(elem).__name__, elem.id)
-                    dic[key] = elem
+                    key_11 = "{}.{}".format(type(elem).__name__, elem.id)
+                    dic[key_11] = elem
         return (dic)
 
     def new(self, obj):

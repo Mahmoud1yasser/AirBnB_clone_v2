@@ -24,11 +24,11 @@ class State(BaseModel, Base):
         var = models.storage.all()
         lista = []
         result = []
-        for key in var:
-            city = key.replace('.', ' ')
+        for key_11 in var:
+            city = key_11.replace('.', ' ')
             city = shlex.split(city)
             if (city[0] == 'City'):
-                lista.append(var[key])
+                lista.append(var[key_11])
         for elem in lista:
             if (elem.state_id == self.id):
                 result.append(elem)

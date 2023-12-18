@@ -29,11 +29,11 @@ class BaseModel:
             updated_at: updated date
         """
         if kwargs:
-            for key, value in kwargs.items():
-                if key == "created_at" or key == "updated_at":
+            for key_11, value in kwargs.items():
+                if key_11 == "created_at" or key_11 == "updated_at":
                     value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
-                if key != "__class__":
-                    setattr(self, key, value)
+                if key_11 != "__class__":
+                    setattr(self, key_11, value)
             if "id" not in kwargs:
                 self.id = str(uuid.uuid4())
             if "created_at" not in kwargs:
@@ -67,7 +67,7 @@ class BaseModel:
     def to_dict(self):
         """creates dictionary of the class  and returns
         Return:
-            returns a dictionary of all the key values in __dict__
+            returns a dictionary of all the key_11 values in __dict__
         """
         my_dict = dict(self.__dict__)
         my_dict["__class__"] = str(type(self).__name__)

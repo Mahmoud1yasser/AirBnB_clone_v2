@@ -29,11 +29,11 @@ class FileStorage:
         dic = {}
         if cls:
             dictionary = self.__objects
-            for key in dictionary:
-                partition = key.replace('.', ' ')
+            for key_11 in dictionary:
+                partition = key_11.replace('.', ' ')
                 partition = shlex.split(partition)
                 if (partition[0] == cls.__name__):
-                    dic[key] = self.__objects[key]
+                    dic[key_11] = self.__objects[key_11]
             return (dic)
         else:
             return self.__objects
@@ -44,15 +44,15 @@ class FileStorage:
             obj: given object
         """
         if obj:
-            key = "{}.{}".format(type(obj).__name__, obj.id)
-            self.__objects[key] = obj
+            key_11 = "{}.{}".format(type(obj).__name__, obj.id)
+            self.__objects[key_11] = obj
 
     def save(self):
         """serialize the file path to JSON file path
         """
         my_dict = {}
-        for key, value in self.__objects.items():
-            my_dict[key] = value.to_dict()
+        for key_11, value in self.__objects.items():
+            my_dict[key_11] = value.to_dict()
         with open(self.__file_path, 'w', encoding="UTF-8") as f:
             json.dump(my_dict, f)
 
@@ -61,9 +61,9 @@ class FileStorage:
         """
         try:
             with open(self.__file_path, 'r', encoding="UTF-8") as f:
-                for key, value in (json.load(f)).items():
+                for key_11, value in (json.load(f)).items():
                     value = eval(value["__class__"])(**value)
-                    self.__objects[key] = value
+                    self.__objects[key_11] = value
         except FileNotFoundError:
             pass
 
@@ -71,8 +71,8 @@ class FileStorage:
         """ delete an existing element
         """
         if obj:
-            key = "{}.{}".format(type(obj).__name__, obj.id)
-            del self.__objects[key]
+            key_11 = "{}.{}".format(type(obj).__name__, obj.id)
+            del self.__objects[key_11]
 
     def close(self):
         """ calls reload()

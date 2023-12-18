@@ -12,10 +12,10 @@ class test_fileStorage(unittest.TestCase):
     def setUp(self):
         """ Set up test environment """
         del_list = []
-        for key in storage._FileStorage__objects.keys():
-            del_list.append(key)
-        for key in del_list:
-            del storage._FileStorage__objects[key]
+        for key_11 in storage._FileStorage__objects.keys():
+            del_list.append(key_11)
+        for key_11 in del_list:
+            del storage._FileStorage__objects[key_11]
 
     def tearDown(self):
         """ Remove storage file at end of tests """
@@ -98,8 +98,8 @@ class test_fileStorage(unittest.TestCase):
         """ Key is properly formatted """
         new = BaseModel()
         _id = new.to_dict()['id']
-        for key in storage.all().keys():
-            temp = key
+        for key_11 in storage.all().keys():
+            temp = key_11
         self.assertEqual(temp, 'BaseModel' + '.' + _id)
 
     def test_storage_var_created(self):

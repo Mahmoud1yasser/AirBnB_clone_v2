@@ -62,10 +62,10 @@ class test_basemodel(unittest.TestCase):
         """ Testing save """
         i = self.value()
         i.save()
-        key = self.name + "." + i.id
+        key_11 = self.name + "." + i.id
         with open('file.json', 'r') as f:
             j = json.load(f)
-            self.assertEqual(j[key], i.to_dict())
+            self.assertEqual(j[key_11], i.to_dict())
 
     def test_str(self):
         """ """

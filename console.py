@@ -161,9 +161,9 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
             return
 
-        key = c_name + "." + c_id
+        key_11 = c_name + "." + c_id
         try:
-            print(storage._FileStorage__objects[key])
+            print(storage._FileStorage__objects[key_11])
         except KeyError:
             print("** no instance found **")
 
@@ -192,10 +192,10 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
             return
 
-        key = c_name + "." + c_id
+        key_11 = c_name + "." + c_id
 
         try:
-            del(storage.all()[key])
+            del(storage.all()[key_11])
             storage.save()
         except KeyError:
             print("** no instance found **")
@@ -262,10 +262,10 @@ class HBNBCommand(cmd.Cmd):
             return
 
         # generate key from class and id
-        key = c_name + "." + c_id
+        key_11 = c_name + "." + c_id
 
         # determine if key is present
-        if key not in storage.all():
+        if key_11 not in storage.all():
             print("** no instance found **")
             return
 
@@ -299,7 +299,7 @@ class HBNBCommand(cmd.Cmd):
             args = [att_name, att_val]
 
         # retrieve dictionary of current objects
-        new_dict = storage.all()[key]
+        new_dict = storage.all()[key_11]
 
         # iterate through attr names and values
         for i, att_name in enumerate(args):
